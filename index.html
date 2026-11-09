@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -7,6 +6,11 @@
   <meta name="description" content="Minha jornada de aprendizado no Bootcamp Newrizon.">
   <title>Minha jornada | Newrizon Bootcamp</title>
 
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     * {
       margin: 0;
@@ -14,117 +18,313 @@
       box-sizing: border-box;
     }
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #10172b;
-      color: #f8fafc;
-      line-height: 1.6;
+    html {
+      scroll-behavior: smooth;
     }
 
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #0c0d11;
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(232, 117, 85, 0.12) 0%, transparent 55%),
+        radial-gradient(circle at 85% 65%, rgba(232, 117, 85, 0.05) 0%, transparent 45%);
+      background-repeat: no-repeat;
+      color: #f1f5f9;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Header */
     header {
-      padding: 24px 8%;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(12, 13, 17, 0.85);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 10px clamp(20px, 6vw, 60px);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #29344d;
     }
 
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-      letter-spacing: 2px;
+    .brand {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .brand:hover {
+      opacity: 0.85;
+    }
+
+    .brand img {
+      width: 72px;
+      height: 72px;
+      object-fit: contain;
+      display: block;
+      border-radius: 8px;
     }
 
     .tag {
-      color: #c4b5fd;
-      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #F07858;
+      background: rgba(232, 117, 85, 0.1);
+      border: 1px solid rgba(232, 117, 85, 0.28);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
     }
 
+    .tag::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: #F07858;
+      box-shadow: 0 0 8px #F07858;
+      display: inline-block;
+    }
+
+    /* Main Container */
     main {
-      max-width: 1000px;
-      margin: auto;
-      padding: 90px 24px;
+      max-width: 1040px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 72px 24px 90px;
+      flex: 1;
     }
 
+    /* Intro / Hero Section */
     .intro {
-      max-width: 700px;
-      margin-bottom: 55px;
+      max-width: 740px;
+      margin-bottom: 72px;
     }
 
     .intro span {
-      color: #a78bfa;
-      font-weight: bold;
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.825rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      font-size: 13px;
+      color: #F07858;
+      background: rgba(232, 117, 85, 0.08);
+      border: 1px solid rgba(232, 117, 85, 0.2);
+      padding: 5px 14px;
+      border-radius: 6px;
+      margin-bottom: 20px;
     }
 
     h1 {
-      font-size: clamp(36px, 6vw, 58px);
+      font-size: clamp(2.3rem, 5.2vw, 3.6rem);
+      font-weight: 800;
       line-height: 1.15;
-      margin: 18px 0;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+      color: #FFFFFF;
+    }
+
+    .highlight {
+      background: linear-gradient(135deg, #FF8E72 0%, #E87555 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .intro p {
-      color: #cbd5e1;
-      font-size: 18px;
+      color: #94A3B8;
+      font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+      line-height: 1.7;
+      margin-bottom: 32px;
+      max-width: 640px;
     }
 
     .button {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 13px 24px;
-      background: #7c3aed;
-      color: white;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #F07858 0%, #E87555 100%);
+      color: #FFFFFF;
       text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 13px 26px;
+      border-radius: 10px;
+      box-shadow: 0 4px 18px rgba(232, 117, 85, 0.35);
+      transition: all 0.25s ease;
+      border: 1px solid rgba(255, 255, 255, 0.15);
     }
 
-    h2 {
-      margin-bottom: 20px;
+    .button svg {
+      transition: transform 0.25s ease;
+    }
+
+    .button:hover {
+      background: linear-gradient(135deg, #FF8866 0%, #F07858 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(232, 117, 85, 0.45);
+    }
+
+    .button:hover svg {
+      transform: translateX(4px);
+    }
+
+    /* Section Aprendizado */
+    #aprendizado {
+      scroll-margin-top: 100px;
+    }
+
+    #aprendizado h2 {
+      font-size: clamp(1.6rem, 3.2vw, 2.1rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 28px;
+      color: #FFFFFF;
+      position: relative;
+      display: inline-block;
+    }
+
+    #aprendizado h2::after {
+      content: '';
+      display: block;
+      width: 44px;
+      height: 3px;
+      background: #E87555;
+      border-radius: 2px;
+      margin-top: 8px;
     }
 
     .cards {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+      gap: 22px;
     }
 
     .card {
-      background: #202b45;
-      padding: 25px;
-      border-radius: 12px;
-      border: 1px solid #33415f;
+      background: #14151B;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 28px 26px;
+      transition: all 0.25s ease;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(232, 117, 85, 0.6), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(232, 117, 85, 0.4);
+      background: #171922;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35), 0 0 20px rgba(232, 117, 85, 0.08);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: rgba(232, 117, 85, 0.1);
+      color: #F07858;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      border: 1px solid rgba(232, 117, 85, 0.22);
     }
 
     .card h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #F07858;
       margin-bottom: 10px;
-      color: #c4b5fd;
     }
 
     .card p {
-      color: #cbd5e1;
+      color: #94A3B8;
+      font-size: 0.95rem;
+      line-height: 1.6;
     }
 
+    /* Footer */
     footer {
+      background: #090A0D;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 34px 20px;
       text-align: center;
-      padding: 30px 20px;
-      border-top: 1px solid #29344d;
-      color: #94a3b8;
-      font-size: 14px;
     }
 
-    @media (max-width: 600px) {
+    .footer-content {
+      max-width: 1040px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    footer p {
+      color: #94A3B8;
+      font-size: 0.9rem;
+    }
+
+    .footer-tagline {
+      color: #E87555;
+      font-size: 0.825rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* Responsive */
+    @media (max-width: 680px) {
       header {
-        padding: 20px;
+        padding: 12px 20px;
+      }
+
+      .brand img {
+        width: 56px;
+        height: 56px;
       }
 
       main {
-        padding: 60px 20px;
+        padding: 48px 20px 60px;
+      }
+
+      .intro {
+        margin-bottom: 52px;
       }
 
       .cards {
         grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .card {
+        padding: 22px 20px;
       }
     }
   </style>
@@ -132,7 +332,12 @@
 
 <body>
   <header>
-    <div class="logo">NEW<span style="color:#a78bfa">RIZON.</span></div>
+    <a href="#" class="brand">
+      <img
+        src="https://media.licdn.com/dms/image/v2/D4E0BAQF6D9d2wAZ3uQ/company-logo_200_200/B4EZzgHVPHJoAI-/0/1773286544714/newrizonglobal_logo?e=2147483647&v=beta&t=S-YRTcOje7NQZRIbXHpufUwNYaxSZ0JvUfPOVvOEQ-k"
+        alt="Logo New Rizon"
+      >
+    </a>
     <div class="tag">BOOTCAMP 2026</div>
   </header>
 
@@ -140,7 +345,7 @@
     <section class="intro">
       <span>Minha jornada começa aqui</span>
 
-      <h1>O futuro é construído com aprendizado e prática.</h1>
+      <h1>O futuro é construído com <span class="highlight">aprendizado e prática</span>.</h1>
 
       <p>
         Uma jornada de descobertas, desafios e evolução
@@ -150,6 +355,10 @@
 
       <a href="#aprendizado" class="button">
         Conheça minha jornada
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14"></path>
+          <path d="m12 5 7 7-7 7"></path>
+        </svg>
       </a>
     </section>
 
@@ -158,6 +367,12 @@
 
       <div class="cards">
         <article class="card">
+          <div class="card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+          </div>
           <h3>Desenvolvimento</h3>
           <p>
             Aprendendo a transformar ideias em soluções
@@ -166,6 +381,14 @@
         </article>
 
         <article class="card">
+          <div class="card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="6" y1="3" x2="6" y2="15"></line>
+              <circle cx="18" cy="6" r="3"></circle>
+              <circle cx="6" cy="18" r="3"></circle>
+              <path d="M18 9a9 9 0 0 1-9 9"></path>
+            </svg>
+          </div>
           <h3>Git e GitHub</h3>
           <p>
             Conhecendo o controle de versão e a
@@ -174,6 +397,12 @@
         </article>
 
         <article class="card">
+          <div class="card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+              <polyline points="16 7 22 7 22 13"></polyline>
+            </svg>
+          </div>
           <h3>Aprendizado contínuo</h3>
           <p>
             Encarando desafios como oportunidades
@@ -182,6 +411,13 @@
         </article>
 
         <article class="card">
+          <div class="card-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <circle cx="12" cy="12" r="6"></circle>
+              <circle cx="12" cy="12" r="2"></circle>
+            </svg>
+          </div>
           <h3>Novos desafios</h3>
           <p>
             Construindo minha jornada com dedicação,
@@ -193,8 +429,10 @@
   </main>
 
   <footer>
-    <p>Feito com dedicação durante o Bootcamp Newrizon.</p>
-    <p>Aprender. Praticar. Evoluir.</p>
+    <div class="footer-content">
+      <p>Feito com dedicação durante o Bootcamp Newrizon.</p>
+      <p class="footer-tagline">Aprender. Praticar. Evoluir.</p>
+    </div>
   </footer>
 </body>
 </html>
