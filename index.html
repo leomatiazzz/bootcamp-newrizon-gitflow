@@ -136,9 +136,7 @@
     }
 
     .highlight {
-      background: linear-gradient(135deg, #FF8E72 0%, #E87555 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: #FF7E5F;
     }
 
     .intro p {
@@ -270,6 +268,90 @@
       line-height: 1.6;
     }
 
+    /* Section Tecnologias */
+    #tecnologias {
+      margin-top: 72px;
+      scroll-margin-top: 100px;
+    }
+
+    #tecnologias h2 {
+      font-size: clamp(1.6rem, 3.2vw, 2.1rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+      color: #FFFFFF;
+      position: relative;
+      display: inline-block;
+    }
+
+    #tecnologias h2::after {
+      content: '';
+      display: block;
+      width: 44px;
+      height: 3px;
+      background: #E87555;
+      border-radius: 2px;
+      margin-top: 8px;
+    }
+
+    .section-desc {
+      color: #94A3B8;
+      font-size: 0.95rem;
+      margin-bottom: 28px;
+    }
+
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 16px;
+    }
+
+    .tech-card {
+      background: #14151B;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 20px 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: all 0.25s ease;
+      position: relative;
+    }
+
+    .tech-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(232, 117, 85, 0.4);
+      background: #181924;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3), 0 0 16px rgba(232, 117, 85, 0.08);
+    }
+
+    .tech-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: rgba(232, 117, 85, 0.1);
+      color: #F07858;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      border: 1px solid rgba(232, 117, 85, 0.22);
+    }
+
+    .tech-name {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #FFFFFF;
+      margin-bottom: 4px;
+    }
+
+    .tech-tag {
+      font-size: 0.75rem;
+      color: #94A3B8;
+      line-height: 1.3;
+    }
+
     /* Footer */
     footer {
       background: #090A0D;
@@ -284,6 +366,47 @@
       display: flex;
       flex-direction: column;
       gap: 6px;
+    }
+
+    /* Social Links */
+    .social-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      background: #14151B;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 999px;
+      color: #F1F5F9;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.25s ease;
+    }
+
+    .social-btn svg {
+      color: #F07858;
+      transition: transform 0.2s ease;
+    }
+
+    .social-btn:hover {
+      background: rgba(232, 117, 85, 0.12);
+      border-color: rgba(232, 117, 85, 0.4);
+      color: #F07858;
+      transform: translateY(-2px);
+    }
+
+    .social-btn:hover svg {
+      transform: scale(1.1);
     }
 
     footer p {
@@ -426,11 +549,104 @@
         </article>
       </div>
     </section>
+
+    <section id="tecnologias">
+      <h2>Tecnologias & Ferramentas</h2>
+      <p class="section-desc">Principais tecnologias e práticas aplicadas ao longo do aprendizado.</p>
+
+      <div class="tech-grid">
+        <div class="tech-card">
+          <div class="tech-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="6" y1="3" x2="6" y2="15"></line>
+              <circle cx="18" cy="6" r="3"></circle>
+              <circle cx="6" cy="18" r="3"></circle>
+              <path d="M18 9a9 9 0 0 1-9 9"></path>
+            </svg>
+          </div>
+          <span class="tech-name">Git</span>
+          <span class="tech-tag">Controle de Versão</span>
+        </div>
+
+        <div class="tech-card">
+          <div class="tech-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+            </svg>
+          </div>
+          <span class="tech-name">GitHub</span>
+          <span class="tech-tag">Colaboração & PRs</span>
+        </div>
+
+        <div class="tech-card">
+          <div class="tech-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+          </div>
+          <span class="tech-name">HTML5</span>
+          <span class="tech-tag">Estruturação Web</span>
+        </div>
+
+        <div class="tech-card">
+          <div class="tech-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="18" height="18" x="3" y="3" rx="2"></rect>
+              <path d="M3 9h18"></path>
+              <path d="M9 21V9"></path>
+            </svg>
+          </div>
+          <span class="tech-name">CSS3</span>
+          <span class="tech-tag">Estilização & Flexbox</span>
+        </div>
+
+        <div class="tech-card">
+          <div class="tech-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+          </div>
+          <span class="tech-name">Gitflow</span>
+          <span class="tech-tag">Fluxo de Trabalho</span>
+        </div>
+
+        <div class="tech-card">
+          <div class="tech-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="4 17 10 11 4 5"></polyline>
+              <line x1="12" y1="19" x2="20" y2="19"></line>
+            </svg>
+          </div>
+          <span class="tech-name">VS Code</span>
+          <span class="tech-tag">Ambiente Dev</span>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
     <div class="footer-content">
-      <p>Feito com dedicação durante o Bootcamp Newrizon.</p>
+      <div class="social-links">
+        <a href="https://github.com/leomatiazzz" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub de Léo Matias">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+          </svg>
+          <span>GitHub</span>
+        </a>
+
+        <a href="https://www.linkedin.com/in/leomatias/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn de Léo Matias">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect width="4" height="12" x="2" y="9"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+          <span>LinkedIn</span>
+        </a>
+      </div>
+
+      <p>Desenvolvido por <strong>Léo Matias</strong> durante o Bootcamp Newrizon.</p>
       <p class="footer-tagline">Aprender. Praticar. Evoluir.</p>
     </div>
   </footer>
